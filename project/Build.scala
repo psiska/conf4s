@@ -14,11 +14,11 @@ object Kunfugirator extends Build {
 
   // modules definition
   lazy val all = Project(
-    id = "kunfugirator",
+    id = "conf4s",
     base = file("."),
     aggregate = Seq(core),
     settings = Defaults.defaultSettings ++ commonSettings ++ Seq(
-      moduleName := "kunfugirator-all",
+      moduleName := "conf4s-all",
 
       (unmanagedSourceDirectories in Compile) := Nil,
       (unmanagedSourceDirectories in Test) := Nil,

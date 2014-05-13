@@ -20,10 +20,11 @@ object Deps {
     "mth.io.releases"   at "http://repo.mth.io/releases"
   )
 
-  lazy val coreProject = common ++ Seq(parboiled2)
+  lazy val coreProject = common ++ Seq(parboiled2, argonaut)
   lazy val common      = scalazGroup ++ utilsGroup ++ testGroup
 
   val parboiled2       = "org.parboiled" %% "parboiled" % "2.0.0-RC1"
+  val argonaut         = "io.argonaut" %% "argonaut" % "6.0.4"
 
   private val scalazVersion = "7.0.6"
   lazy val scalazGroup = Seq(sz_core, sz_effect, sz_concurrent, sz_typelevel)
