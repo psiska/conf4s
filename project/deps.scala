@@ -23,7 +23,7 @@ object Deps {
   lazy val coreProject = common ++ Seq(parboiled2, argonaut)
   lazy val common      = scalazGroup ++ utilsGroup ++ testGroup
 
-  val parboiled2       = "org.parboiled" %% "parboiled" % "2.0.0-RC1"
+  val parboiled2       = "org.parboiled" %% "parboiled" % "2.0.0"
   val argonaut         = "io.argonaut" %% "argonaut" % "6.0.4"
 
   private val scalazVersion = "7.0.6"
