@@ -3,22 +3,25 @@ package com.github.siskape.conf4s.parser
 import org.parboiled2._
 
 /**
- * TODO documentation
- * TODO make some nice documentation
  * @param input
  */
 class CMParser(val input: ParserInput) extends Parser with StringBuilding {
 
   import CharPredicate.{Digit, Digit19, HexDigit, AlphaNum}
 
+  /**
+   * debugging rule
+   */
   def deb(in: String) = rule {
     run(println(s"$in ch: ${cursorChar} + i: ${cursor} vs: ${valueStack}"))
   }
 
+  // Root rule
   def CM: Rule1[Seq[Line]] = rule {
     WhiteSpace ~ lines ~ EOI
   }
 
+  // matches lines - either triple newline or comment.
   def lines: Rule1[Seq[Line]] = rule {
     zeroOrMore(cmTriple | newLine | comment)
   }
